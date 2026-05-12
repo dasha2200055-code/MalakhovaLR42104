@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> <!-- добавить кодировку -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- добавляем метатег для адаптивности  -->
+    <title>Task Tracker</title>  <!--добавляем заголовок страницы -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> <!--добавляем стили bootstrap -->
+
+  </head>
+  <body>
+    {% csrf_token %}
+      <div class="container"> <!-- добавляем контейнер для адаптивности -->
+        <br>
+        <h2><strong>Task Tracker Малахова Д.С. 📝</strong></h2> <!--добавляем заголовок страницы -->
+
+        <br>
+
+         <ul class="list-group">  <!-- добавляем список задач -->
+
+            <li class="list-group-item mb-2">   <!-- добавляем класс для отступов между задачами -->         
+              1. Проснуться в 9:00.            
+            <li class="list-group-item mb-2">
+              2. Сходить в душ.
+            </li> 
+            <li class="list-group-item mb-2">
+              3. Позавтракать кашей с кофе.
+            </li> 
+           <li class="list-group-item mb-2">
+              4. Высушить волосы феном.
+            </li>
+            <li class="list-group-item mb-2">
+              5. Сделать макияж.    
+            </li>
+            <li class="list-group-item mb-2">
+              6. Сходить на 4 пары в университет.      
+            </li>
+            <li class="list-group-item mb-2">
+              7. Сходить за продуктами после учебы.      
+            </li>
+        
+
+        </ul>
+
+
+
+      </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

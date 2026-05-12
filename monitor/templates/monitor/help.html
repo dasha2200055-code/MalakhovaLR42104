@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Справка | УБИ.196</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+        }
+        .menu {
+            background: #2c3e50;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .menu a {
+            color: #bdc3c7;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        .menu a.active {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .card p {
+            line-height: 1.7;
+            color: #34495e;
+        }
+        .criteria {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .criteria-item {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .criteria-item .icon {
+            font-size: 30px;
+        }
+        .criteria-item h3 {
+            margin: 10px 0 5px 0;
+            color: #2c3e50;
+        }
+        .criteria-item p {
+            font-size: 13px;
+            color: #7f8c8d;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        .footer {
+            text-align: center;
+            color: #95a5a6;
+            font-size: 13px;
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .criteria {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <a href="/monitor/">Главная</a>
+        <a href="/monitor/charts/">Графики</a>
+        <a href="/monitor/help/" class="active">Справка</a>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Об угрозе УБИ.196</h2>
+            <p><strong>УБИ.196</strong> - «Угроза контроля вредоносной программой списка приложений, запущенных на мобильном устройстве».</p>
+            <p>Злоумышленник, используя вредоносную программу, может получать информацию о том, какие приложения активны в данный момент. Эти данные могут использоваться для кражи персональных данных, слежки за действиями пользователя или для целенаправленного воздействия на конкретные приложения.</p>
+            <p>Данная угроза реализуется из-за недостаточности мер антивирусной защиты и отсутствия контроля за разрешённым ПО.</p>
+        </div>
+
+        <div class="card">
+            <h2>Как работает система защиты</h2>
+            <p>Система анализирует каждое приложение по трём критериям и рассчитывает уровень риска.</p>
+
+            <div class="criteria">
+                <div class="criteria-item">
+                    <div class="icon">📊</div>
+                    <h3>Критерий 1</h3>
+                    <p><strong>Частота запросов</strong></p>
+                    <p>Если приложение запрашивает список запущенных программ более 50 раз — это подозрительно</p>
+                </div>
+                <div class="criteria-item">
+                    <div class="icon">🔑</div>
+                    <h3>Критерий 2</h3>
+                    <p><strong>Доступ к API</strong></p>
+                    <p>Если приложение имеет доступ к системным функциям — оно может следить за другими программами</p>
+                </div>
+                <div class="criteria-item">
+                    <div class="icon">❓</div>
+                    <h3>Критерий 3</h3>
+                    <p><strong>Неизвестное происхождение</strong></p>
+                    <p>Если приложение не из доверенного списка (содержит «Unknown» в названии)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Правила принятия решений</h2>
+            <table>
+                <thead>
+                    <tr><th>Уровень риска</th><th>Статус</th><th>Действие</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0–1 балл</td>
+                        <td style="color: #27ae60; font-weight: bold;">РАЗРЕШЁН</td>
+                        <td>Приложение считается безопасным</td>
+                    </tr>
+                    <tr>
+                        <td>2–3 балла</td>
+                        <td style="color: #e74c3c; font-weight: bold;">ЗАБЛОКИРОВАН</td>
+                        <td>Приложение признаётся вредоносным, рекомендуется удалить</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Рекомендации пользователю</h2>
+            <ol style="line-height: 2;">
+                <li>Проверьте список заблокированных приложений на странице <strong>«Главная»</strong>.</li>
+                <li>Изучите графики на странице <strong>«Графики»</strong> для наглядного анализа.</li>
+                <li>Приложения с пометкой <strong>«Неизвестное»</strong> проверьте вручную.</li>
+                <li>Приложения с высоким риском и доступом к API рекомендуется удалить.</li>
+                <li>После удаления перезапустите анализ кнопкой <strong>«Обновить анализ»</strong>.</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Лабораторная работа №4 | УБИ.196 | РГУ нефти и газа им. И.М. Губкина | Малахова Д.С., 2026</p>
+    </div>
+
+</body>
+</html>

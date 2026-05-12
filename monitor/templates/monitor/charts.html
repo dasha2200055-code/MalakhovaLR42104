@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Графики | УБИ.196</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+        }
+        .menu {
+            background: #2c3e50;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .menu a {
+            color: #bdc3c7;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        .menu a.active {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .chart-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .chart-card img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <a href="/">Главная</a>
+        <a href="/charts/" class="active">Графики</a>
+        <a href="/monitor/help/">Справка</a>
+    </div>
+
+    <div class="container">
+        <h2 style="text-align: center; color: #2c3e50;">Графики результатов анализа</h2>
+
+        <div class="chart-card">
+            <img src="data:image/png;base64,{{ chart_activity }}" alt="Активность">
+        </div>
+        <div class="chart-card">
+            <img src="data:image/png;base64,{{ chart_risk }}" alt="Риск">
+        </div>
+        <div class="chart-card">
+            <img src="data:image/png;base64,{{ chart_pie }}" alt="Статусы">
+        </div>
+        <div class="chart-card">
+            <img src="data:image/png;base64,{{ chart_bar_risk }}" alt="Риск по приложениям">
+        </div>
+        <div class="chart-card">
+            <img src="data:image/png;base64,{{ chart_bar_requests }}" alt="Запросы">
+        </div>
+    </div>
+
+</body>
+</html>
